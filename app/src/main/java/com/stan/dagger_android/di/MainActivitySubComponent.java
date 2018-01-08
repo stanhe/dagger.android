@@ -1,9 +1,4 @@
 package com.stan.dagger_android.di;
-import com.stan.dagger_android.home.ActivityModule;
-import com.stan.dagger_android.home.MainActivity;
-import dagger.Subcomponent;
-import dagger.android.AndroidInjector;
-
 /**
  * Created by uu on 2017/12/28.
  * 非 dagger.android 写法 使用 Subcomponent

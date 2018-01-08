@@ -1,15 +1,5 @@
 package com.stan.dagger_android.di;
 
-import android.app.Activity;
-import android.app.Application;
-import android.content.Context;
-import com.stan.dagger_android.home.MainActivity;
-import dagger.Binds;
-import dagger.Module;
-import dagger.android.ActivityKey;
-import dagger.android.AndroidInjector;
-import dagger.multibindings.IntoMap;
-
 /**
  * Created by uu on 2017/12/28.
  * 非 dagger.android 写法

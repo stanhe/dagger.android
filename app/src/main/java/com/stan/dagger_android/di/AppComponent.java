@@ -12,7 +12,6 @@ import dagger.BindsInstance;
 import dagger.Component;
 import dagger.android.AndroidInjector;
 import dagger.android.support.AndroidSupportInjectionModule;
-import retrofit2.Retrofit;
 
 /**
  * Created by uu on 2017/12/28.

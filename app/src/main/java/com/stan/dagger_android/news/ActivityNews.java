@@ -1,9 +1,7 @@
 package com.stan.dagger_android.news;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.widget.TextView;
 
 import com.stan.dagger_android.R;

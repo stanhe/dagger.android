@@ -1,10 +1,10 @@
 package com.stan.dagger_android.home;
 
 import android.os.Bundle;
+
 import com.stan.dagger_android.R;
 import com.stan.dagger_android.base.BaseActivity;
 import com.stan.dagger_android.util.ActivityUtils;
-
 
 import javax.inject.Inject;
 

@@ -14,9 +14,9 @@ import com.stan.dagger_android.base.BaseFragment;
 import com.stan.dagger_android.data.Student;
 import com.stan.dagger_android.di.ActivityScoped;
 import com.stan.dagger_android.news.ActivityNews;
-import com.stan.dagger_android.util.ActivityUtils;
 
 import javax.inject.Inject;
+
 import butterknife.BindView;
 import butterknife.OnClick;
 
