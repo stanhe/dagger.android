@@ -25,7 +25,6 @@ import dagger.android.support.AndroidSupportInjectionModule;
 public interface AppComponent extends AndroidInjector<App> {
 
     Context getContext();
-    MyRetrofit retrofit();
 
     @Component.Builder
     interface Builder{
