@@ -1,13 +1,19 @@
 package com.stan.dagger_android.news;
 
-import android.content.Context;
-import android.util.AttributeSet;
-import android.view.View;
+import android.os.Bundle;
+import android.os.PersistableBundle;
+import android.support.annotation.Nullable;
+import android.util.Log;
+import android.widget.TextView;
 
+import com.stan.dagger_android.R;
 import com.stan.dagger_android.base.BaseActivity;
-import com.stan.dagger_android.data.News;
 
 import javax.inject.Inject;
+
+import butterknife.BindView;
+import butterknife.OnClick;
+import dagger.android.AndroidInjection;
 
 /**
  * Created by uu on 2017/12/29.
@@ -15,18 +21,41 @@ import javax.inject.Inject;
 
 public class ActivityNews extends BaseActivity implements ActivityNewsContract.View {
 
+    public static final String TAG = "ActivityNews";
 
     @Inject
     ActivityNewsContract.Presenter presenter;
 
-    @Override
-    public View onCreateView(String name, Context context, AttributeSet attrs) {
-        return super.onCreateView(name, context, attrs);
-    }
-
+    @BindView(R.id.message)
+    TextView message;
 
     @Override
-    public void showNews(News news) {
-
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        AndroidInjection.inject(this);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_news);
     }
+
+    @OnClick(R.id.message)
+    public void clickMessage() {
+        presenter.getMessage("getMessage!");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        presenter.takeView(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        presenter.dropView();
+    }
+
+    @Override
+    public void showMessage(String message) {
+        this.message.setText(message);
+    }
+
 }

@@ -18,7 +18,7 @@ public enum MyRetrofit {
     @Inject
     instance;
 
-    private static final String BASE_URL = "";
+    private static final String BASE_URL = "http://192.168.0.159:8081/";
     private static Api api;
 
     public Api getApi() {

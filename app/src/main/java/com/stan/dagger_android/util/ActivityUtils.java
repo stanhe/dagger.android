@@ -44,10 +44,4 @@ public class ActivityUtils {
         transaction.commit();
     }
 
-    public static void goToActivity(Context context,Class<?> c,String dataName,String data){
-        Intent i = new Intent(context,c.getClass());
-        i.putExtra(dataName,data);
-        context.startActivity(i);
-    }
-
 }

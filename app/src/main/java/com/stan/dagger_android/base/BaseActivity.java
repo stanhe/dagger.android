@@ -9,12 +9,13 @@ import dagger.android.support.DaggerAppCompatActivity;
  * Created by uu on 2017/12/28.
  */
 
-public class BaseActivity extends DaggerAppCompatActivity{
+public abstract class BaseActivity extends DaggerAppCompatActivity{
     @Override
     public void setContentView(View view) {
         super.setContentView(view);
         ButterKnife.bind(this);
     }
+
 
     @Override
     public void setContentView(int layoutResID) {

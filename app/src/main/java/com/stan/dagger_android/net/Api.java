@@ -1,5 +1,6 @@
 package com.stan.dagger_android.net;
 
+import com.stan.dagger_android.data.BaseBackData;
 import com.stan.dagger_android.data.News;
 
 import io.reactivex.Observable;
@@ -16,4 +17,7 @@ public interface Api {
     Observable<News> getNews(
             @Path("id")int id
     );
+
+    @GET("/home")
+    Observable<BaseBackData> home();
 }

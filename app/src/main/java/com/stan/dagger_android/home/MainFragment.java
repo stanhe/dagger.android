@@ -1,6 +1,7 @@
 package com.stan.dagger_android.home;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -44,7 +45,7 @@ public class MainFragment extends BaseFragment implements MainActivityContract.V
 
     @OnClick(R.id.text)
     public void clickText() {
-        ActivityUtils.goToActivity(context, ActivityNews.class,"id","12");
+        startActivity(new Intent(getActivity(),ActivityNews.class));
     }
 
     @Nullable
