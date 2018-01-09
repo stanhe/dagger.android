@@ -11,7 +11,6 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import dagger.android.AndroidInjection;
 
 /**
  * Created by uu on 2017/12/29.
@@ -29,7 +28,6 @@ public class ActivityNews extends BaseActivity implements ActivityNewsContract.V
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
     }

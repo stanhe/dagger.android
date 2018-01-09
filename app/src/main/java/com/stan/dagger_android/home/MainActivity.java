@@ -8,8 +8,6 @@ import com.stan.dagger_android.util.ActivityUtils;
 
 import javax.inject.Inject;
 
-import dagger.android.AndroidInjection;
-
 public class MainActivity extends BaseActivity {
     public static final String TAG = "MainActivity";
 
@@ -18,7 +16,6 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 

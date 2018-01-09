@@ -4,7 +4,6 @@ import android.app.Application;
 import android.content.Context;
 
 import com.stan.dagger_android.App;
-import com.stan.dagger_android.net.MyRetrofit;
 
 import javax.inject.Singleton;
 
