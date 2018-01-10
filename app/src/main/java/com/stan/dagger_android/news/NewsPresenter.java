@@ -3,7 +3,7 @@ package com.stan.dagger_android.news;
 import android.util.Log;
 
 import com.stan.dagger_android.data.BaseBackData;
-import com.stan.dagger_android.net.MyRetrofit;
+import com.stan.dagger_android.net.RetroApi;
 import com.stan.dagger_android.util.RxUtils;
 
 import javax.inject.Inject;
@@ -22,7 +22,7 @@ public class NewsPresenter implements ActivityNewsContract.Presenter {
     ActivityNewsContract.View view;
 
     @Inject
-    MyRetrofit retrofit;
+    RetroApi retrofit;
 
     @Inject
     public NewsPresenter() {

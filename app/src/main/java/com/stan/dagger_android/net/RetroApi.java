@@ -13,7 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by uu on 2017/12/29.
  */
 
-public enum MyRetrofit {
+public enum RetroApi {
 
     @Inject
     instance;

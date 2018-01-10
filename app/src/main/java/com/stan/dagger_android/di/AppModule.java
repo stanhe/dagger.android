@@ -3,7 +3,7 @@ package com.stan.dagger_android.di;
 import android.app.Application;
 import android.content.Context;
 
-import com.stan.dagger_android.net.MyRetrofit;
+import com.stan.dagger_android.net.RetroApi;
 
 import dagger.Binds;
 import dagger.Module;
@@ -19,7 +19,7 @@ public abstract class AppModule {
     abstract Context bindContext(Application  application);
 
     @Provides
-    static MyRetrofit getMyRetrofit(){
-        return MyRetrofit.instance;
+    static RetroApi getMyRetrofit(){
+        return RetroApi.instance;
     }
 }
