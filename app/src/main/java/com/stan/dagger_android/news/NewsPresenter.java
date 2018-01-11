@@ -2,7 +2,7 @@ package com.stan.dagger_android.news;
 
 import com.stan.dagger_android.base.DisposablePresenter;
 import com.stan.dagger_android.data.BaseBackData;
-import com.stan.dagger_android.net.RetroApi;
+import com.stan.dagger_android.net.Api;
 import com.stan.dagger_android.util.RxUtils;
 
 import javax.inject.Inject;
@@ -22,7 +22,7 @@ public class NewsPresenter extends DisposablePresenter implements ActivityNewsCo
     ActivityNewsContract.View view;
 
     @Inject
-    RetroApi retrofit;
+    Api retroApi;
 
     @Inject
     public NewsPresenter() {
@@ -42,8 +42,7 @@ public class NewsPresenter extends DisposablePresenter implements ActivityNewsCo
 
     @Override
     public void getMessage(String message) {
-        retrofit.getApi()
-                .home()
+        retroApi.home()
                 .compose(RxUtils.<BaseBackData>applySchedulers())
                 .subscribe(new Observer<BaseBackData>() {
                     @Override
