@@ -1,20 +1,20 @@
 package com.stan.dagger_android.news;
 
-import android.util.Log;
-
+import com.stan.dagger_android.base.DisposablePresenter;
 import com.stan.dagger_android.data.BaseBackData;
 import com.stan.dagger_android.net.RetroApi;
 import com.stan.dagger_android.util.RxUtils;
 
 import javax.inject.Inject;
 
-import io.reactivex.functions.Consumer;
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
 
 /**
  * Created by uu on 2017/12/29.
  */
 
-public class NewsPresenter implements ActivityNewsContract.Presenter {
+public class NewsPresenter extends DisposablePresenter implements ActivityNewsContract.Presenter {
 
     public static final String TAG = "NewsPresenter";
 
@@ -36,6 +36,7 @@ public class NewsPresenter implements ActivityNewsContract.Presenter {
 
     @Override
     public void dropView() {
+        clearDisposable();
         this.view = null;
     }
 
@@ -44,15 +45,25 @@ public class NewsPresenter implements ActivityNewsContract.Presenter {
         retrofit.getApi()
                 .home()
                 .compose(RxUtils.<BaseBackData>applySchedulers())
-                .subscribe(new Consumer<BaseBackData>() {
+                .subscribe(new Observer<BaseBackData>() {
                     @Override
-                    public void accept(BaseBackData baseBackData) throws Exception {
+                    public void onSubscribe(Disposable d) {
+                        addDisposable(d);
+                    }
+
+                    @Override
+                    public void onNext(BaseBackData baseBackData) {
                         view.showMessage(baseBackData.message);
                     }
-                }, new Consumer<Throwable>() {
+
                     @Override
-                    public void accept(Throwable throwable) throws Exception {
-                        Log.e(TAG,"Exception :"+throwable);
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
                     }
                 });
     }
