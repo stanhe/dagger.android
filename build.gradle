@@ -24,6 +24,7 @@ task clean(type: Delete) {
 
 ext{
     // App dependencies
+    loggerVersion = '2.1.1'
     daggerVersion = '2.14.1'
     butterknifeVersion = '8.8.1'
     guavaVersion = '18.0'

@@ -1,5 +1,6 @@
 package com.stan.dagger_android.news;
 
+import com.orhanobut.logger.Logger;
 import com.stan.dagger_android.base.DisposablePresenter;
 import com.stan.dagger_android.data.BaseBackData;
 import com.stan.dagger_android.net.Api;
@@ -18,7 +19,6 @@ public class NewsPresenter extends DisposablePresenter implements ActivityNewsCo
 
     public static final String TAG = "NewsPresenter";
 
-    //view not inject
     ActivityNewsContract.View view;
 
     @Inject
@@ -57,7 +57,7 @@ public class NewsPresenter extends DisposablePresenter implements ActivityNewsCo
 
                     @Override
                     public void onError(Throwable e) {
-
+                        Logger.e("Error : "+e);
                     }
 
                     @Override
