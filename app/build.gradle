@@ -1,4 +1,7 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion 26
     buildToolsVersion '26.0.2'
@@ -38,14 +41,14 @@ dependencies {
     //Dagger dependencies
     compile "com.google.dagger:dagger:$rootProject.daggerVersion"
     provided 'org.glassfish:javax.annotation:10.0-b28'
-    annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
     compile "com.google.dagger:dagger-android:$rootProject.daggerVersion"
     compile "com.google.dagger:dagger-android-support:$rootProject.daggerVersion" // if you use the support libraries
-    annotationProcessor "com.google.dagger:dagger-android-processor:$rootProject.daggerVersion"
+    kapt "com.google.dagger:dagger-android-processor:$rootProject.daggerVersion"
 
     //butterKnife
     compile "com.jakewharton:butterknife:$rootProject.butterknifeVersion"
-    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknifeVersion"
+    kapt "com.jakewharton:butterknife-compiler:$rootProject.butterknifeVersion"
 
     //rx and retrofit
     compile "io.reactivex.rxjava2:rxandroid:$rootProject.rxAndroidVersion"
@@ -53,5 +56,6 @@ dependencies {
     compile "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
     compile "com.squareup.retrofit2:adapter-rxjava2:$rootProject.retrofitVersion"
     compile "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
 }
