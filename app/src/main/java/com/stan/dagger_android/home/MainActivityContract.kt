@@ -9,10 +9,10 @@ import com.stan.dagger_android.base.BaseView
 
 interface MainActivityContract {
     interface View : BaseView<Presenter> {
-        val isActive: Boolean
+        //val isActive: Boolean
     }
 
     interface Presenter : BasePresenter<View> {
-        val isDataMissing: Boolean
+        //val isDataMissing: Boolean
     }
 }

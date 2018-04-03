@@ -8,7 +8,7 @@ import com.stan.dagger_android.util.ActivityUtils
 
 import javax.inject.Inject
 
-class MainActivity : BaseActivity() {
+class MainActivity : BaseActivity(),MainActivityContract.View {
 
     @Inject
     lateinit var fragment: MainFragment

@@ -32,18 +32,14 @@ class MainFragment @Inject constructor() : BaseFragment(), MainActivityContract.
     @BindView(R.id.text)
     lateinit var textView: TextView
 
-    override val isActive: Boolean
-        get() = isAdded
-
     @OnClick(R.id.text)
     fun clickText() {
         startActivity(Intent(activity, ActivityNews::class.java))
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater!!.inflate(R.layout.fragment_main, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        return inflater.inflate(R.layout.fragment_main, container, false)
     }
-
 
     override fun onResume() {
         super.onResume()

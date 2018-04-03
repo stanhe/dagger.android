@@ -21,14 +21,19 @@ class App : DaggerApplication() {
     }
 
     private fun initLogger() {
-        Logger.addLogAdapter(AndroidLogAdapter(
-                PrettyFormatStrategy.newBuilder()
+        val formatStrategy = PrettyFormatStrategy.newBuilder()
                         .showThreadInfo(false)  // (Optional) Whether to show thread info or not. Default true
                         .methodCount(5)         // (Optional) How many method line to show. Default 2
                         .methodOffset(7)        // (Optional) Hides internal method calls up to offset. Default 5
                         .tag("Stan")            // (Optional) Global tag for every log. Default PRETTY_LOGGER
                         .build()
-        ))
+        Logger.addLogAdapter(object : AndroidLogAdapter(formatStrategy){
+            override fun isLoggable(priority: Int, tag: String?): Boolean {
+                return BuildConfig.DEBUG
+                //return true
+            }
+        })
+
     }
 
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {

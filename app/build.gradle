@@ -41,14 +41,14 @@ dependencies {
     //Dagger dependencies
     implementation "com.google.dagger:dagger:$rootProject.daggerVersion"
     compileOnly 'org.glassfish:javax.annotation:10.0-b28'
-    kapt "com.google.dagger:dagger-implementationr:$rootProject.daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
     implementation "com.google.dagger:dagger-android:$rootProject.daggerVersion"
     implementation "com.google.dagger:dagger-android-support:$rootProject.daggerVersion" // if you use the support libraries
     kapt "com.google.dagger:dagger-android-processor:$rootProject.daggerVersion"
 
     //butterKnife
     implementation "com.jakewharton:butterknife:$rootProject.butterknifeVersion"
-    kapt "com.jakewharton:butterknife-implementationr:$rootProject.butterknifeVersion"
+    kapt "com.jakewharton:butterknife-compiler:$rootProject.butterknifeVersion"
 
     //rx and retrofit
     implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxAndroidVersion"

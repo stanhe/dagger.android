@@ -13,9 +13,9 @@ import dagger.android.support.DaggerFragment
 
 abstract class BaseFragment : DaggerFragment() {
     private var unBinder: Unbinder? = null
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        unBinder = ButterKnife.bind(this, view!!)
+        unBinder = ButterKnife.bind(this, view)
         initView()
     }
 
